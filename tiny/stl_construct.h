@@ -63,11 +63,11 @@ __STL_BEGIN_NAMESPACE
         __Destroy(__first, __last, __value_type(__first));
     }
 
-    inline void _Destroy(char *, char *)        {}
-    inline void _Destroy(int *, int *)          {}
-    inline void _Destroy(float *, float *)      {}
-    inline void _Destroy(long *, long *)        {}
-    inline void _Destroy(double *, double *)    {}
+    inline void _Destroy(char *, char *) {}
+    inline void _Destroy(int *, int *) {}
+    inline void _Destroy(float *, float *) {}
+    inline void _Destroy(long *, long *) {}
+    inline void _Destroy(double *, double *) {}
 
     template<class _T1, class _T2>
     inline void construct(_T1 *__p, _T2 &__value) {

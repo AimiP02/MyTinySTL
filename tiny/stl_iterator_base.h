@@ -139,7 +139,7 @@ __STL_BEGIN_NAMESPACE
 
     template<class _InputIterator, class _Distance>
     inline void distance(_InputIterator __first, _InputIterator __last, _Distance &__n) {
-        return __distance(__first, __last, __n, iterator_category(__first));
+        __distance(__first, __last, __n, iterator_category(__first));
     }
 
 // #define __STL_CLASS_PARTIAL_SPECIALIZATION
@@ -168,7 +168,6 @@ __STL_BEGIN_NAMESPACE
         typedef typename iterator_traits<_InputIterator>::iterator_catego _Category;
         __distance(__first, __last, _Category());
     }
-
 #endif
 
     template<class _InputIterator, class _Distance>
