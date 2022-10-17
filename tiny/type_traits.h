@@ -1,5 +1,11 @@
-#ifndef Bronya_STL_STL_CONFIG_H
-#define Bronya_STL_STL_CONFIG_H
+/*
+ *
+ * Creadted by i3roNy@ on 2022/10/17
+ *
+ */
+
+#ifndef Bronya_TYPE_TRAITS_H
+#define Bronya_TYPE_TRAITS_H
 
 struct __true_type{};
 struct __false_type{};
