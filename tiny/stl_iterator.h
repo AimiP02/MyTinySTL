@@ -220,7 +220,7 @@ __STL_BEGIN_NAMESPACE
         return !(__lhs == __rhs);
     }
 
-    //...
+    //....
 
 __STL_END_NAMESPACE
 
