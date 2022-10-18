@@ -210,6 +210,12 @@ __STL_BEGIN_NAMESPACE
         return (__rhs.base() - __lhs.base());
     }
 
+    // template<class _Iterator>
+    // typename reverse_iterator<_Iterator>::difference_type
+    // operator+(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
+
+    // }
+
     template<class _Iterator>
     inline bool operator==(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
         return (__lhs.base() == __rhs.base());
@@ -220,7 +226,25 @@ __STL_BEGIN_NAMESPACE
         return !(__lhs == __rhs);
     }
 
-    //....
+    template<class _Iterator>
+    inline bool operator<(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
+        return (__rhs.base() < __lhs.base())
+    }
+
+    template<class _Iterator>
+    inline bool operator>(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
+        return (__rhs < __lhs)
+    }
+
+    template<class _Iterator>
+    inline bool operator<=(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
+        return !(__rhs < __lhs)
+    }
+
+    template<class _Iterator>
+    inline bool operator>=(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
+        return !(__rhs > __lhs)
+    }
 
 __STL_END_NAMESPACE
 
