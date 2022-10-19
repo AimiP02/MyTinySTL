@@ -2,6 +2,7 @@
  *
  * Creadted by i3roNy@ on 2022/10/17
  *
+ * stl_iterator_base.h定义了STL里iterator的基础模板，包括特性提取和移动等
  */
 
 #ifndef BRONYA_STL_STL_ITERATOR_BASE_H

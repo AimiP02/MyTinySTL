@@ -85,7 +85,7 @@ __STL_BEGIN_NAMESPACE
 
     template<class _T>
     inline _T *__copy_aux2(const _T *__first, const _T *__last, _T *__result, __true_type) {
-        return __copy_aux2(__first, __last, __result);
+        return __copy_trivial(__first, __last, __result);
     }
 
     template<class _InputIterator, class _OutputIterator>
@@ -100,7 +100,7 @@ __STL_BEGIN_NAMESPACE
 
     template<class _InputIterator, class _OutputIterator, class _T>
     inline _OutputIterator __copy_aux(_InputIterator __first, _InputIterator __last, _OutputIterator __result, _T *) {
-        typedef typename __type_traits<_Tp>::has_trivial_assignment_operator _Trivial;
+        typedef typename __type_traits<_T>::has_trivial_assignment_operator _Trivial;
         return __copy_aux2(__first, __last, __result, _Trivial());
     }
 

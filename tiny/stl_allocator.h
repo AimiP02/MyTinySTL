@@ -2,6 +2,7 @@
  *
  * Creadted by i3roNy@ on 2022/10/17
  *
+ * stl_allocator.h定义了STL的配置器
  */
 
 #ifndef BRONYA_STL_ALLOCATOR_H
@@ -54,7 +55,7 @@ __STL_BEGIN_NAMESPACE
         }
     
         static _T *allocate(void) {
-            return (_T *)_Alloc:allocate(sizeof(_T));
+            return (_T *)_Alloc::allocate(sizeof(_T));
         }
 
         static void deallocate(void *__p) {

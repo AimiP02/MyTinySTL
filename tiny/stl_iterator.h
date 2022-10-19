@@ -2,6 +2,7 @@
  *
  * Creadted by i3roNy@ on 2022/10/17
  *
+ * stl_iterator.h定义了STL里的迭代器模板，重载了迭代器相关的运算符
  */
 
 #ifndef BRONYA_STL_ITERATOR_H
@@ -146,6 +147,9 @@ __STL_BEGIN_NAMESPACE
 
         reverse_iterator(const _Self &__x) : cur(__x.cur) {}
 
+        template<class _Iter>
+        reverse_iterator(const reverse_iterator<_Iter> &__other) : cur(__other.base()) {}
+
         _Iterator base() const {
             return cur;
         }
@@ -228,22 +232,22 @@ __STL_BEGIN_NAMESPACE
 
     template<class _Iterator>
     inline bool operator<(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
-        return (__rhs.base() < __lhs.base())
+        return (__rhs.base() < __lhs.base());
     }
 
     template<class _Iterator>
     inline bool operator>(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
-        return (__rhs < __lhs)
+        return (__rhs < __lhs);
     }
 
     template<class _Iterator>
     inline bool operator<=(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
-        return !(__rhs < __lhs)
+        return !(__rhs < __lhs);
     }
 
     template<class _Iterator>
     inline bool operator>=(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
-        return !(__rhs > __lhs)
+        return !(__rhs > __lhs);
     }
 
 __STL_END_NAMESPACE

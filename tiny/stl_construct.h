@@ -2,6 +2,7 @@
  *
  * Creadted by i3roNy@ on 2022/10/17
  *
+ * stl_construct.h定义了STL里构造对象和析构对象的模板
  */
 
 #ifndef Bronya_STL_STL_CONSTRUCT_H
