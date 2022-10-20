@@ -3,6 +3,7 @@
         "type_traits": "cpp",
         "new": "cpp",
         "initializer_list": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "iterator": "cpp"
     }
 }

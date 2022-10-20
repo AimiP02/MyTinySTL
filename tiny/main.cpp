@@ -3,8 +3,11 @@
 
 int main() {
     bronya_stl::vector<int> Test(5);
+    bronya_stl::vector<int> Test2;
+    typedef bronya_stl::vector<int>::iterator itr;
     Test.push_back(4);
     Test.push_back(5);
-    printf("Test[0]=%d\nTest[1]=%d\n", Test[0], Test[1]);
+    Test2 = Test;
+    printf("%d\n", Test2[0]);
     return 0;
 }

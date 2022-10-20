@@ -214,11 +214,11 @@ __STL_BEGIN_NAMESPACE
         return (__rhs.base() - __lhs.base());
     }
 
-    // template<class _Iterator>
-    // typename reverse_iterator<_Iterator>::difference_type
-    // operator+(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {
-
-    // }
+    template<class _Iterator>
+    typename reverse_iterator<_Iterator>::difference_type
+    operator+(typename reverse_iterator<_Iterator>::difference_type __n, const reverse_iterator<_Iterator> &__x) {
+        return reverse_iterator<_Iterator>(__x.base() - __n);
+    }
 
     template<class _Iterator>
     inline bool operator==(const reverse_iterator<_Iterator> &__lhs, const reverse_iterator<_Iterator> &__rhs) {

@@ -11,6 +11,7 @@
  * - copy_backward -> finished
  * - fill -> finished
  * - fill_n -> finished
+ * - equal -> finished
  * 
  */
 
@@ -179,6 +180,17 @@ __STL_BEGIN_NAMESPACE
             *__first = __value;
         }
         return __first;
+    }
+
+    /* equal: 比较是否相等 */
+    template<class _InputIterator1, class _InputIterator2>
+    inline bool equal(_InputIterator1 __first1, _InputIterator1 __last1, _InputIterator2 __first2) {
+        for(; __first1 != __last1; ++__first1, ++__first2) {
+            if(*__first1 != *__first2) {
+                return false;
+            }
+        }
+        return true;
     }
 
 __STL_END_NAMESPACE
