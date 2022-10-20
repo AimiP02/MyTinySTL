@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Bronya_tinySTL.dir/tiny/main.cpp.o  -o Bronya_tinySTL 

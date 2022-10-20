@@ -90,12 +90,12 @@ __STL_BEGIN_NAMESPACE
 
     template<class _InputIterator, class _OutputIterator>
     inline _OutputIterator __copy_aux2(_InputIterator __first, _InputIterator __last, _OutputIterator __result, __true_type) {
-        return __copy(__first, __last, __result, iterator_category(__first), distance(__first));
+        return __copy(__first, __last, __result, iterator_category(__first), __difference_type(__first));
     }
 
     template<class _InputIterator, class _OutputIterator>
     inline _OutputIterator __copy_aux2(_InputIterator __first, _InputIterator __last, _OutputIterator __result, __false_type) {
-        return __copy(__first, __last, __result, iterator_category(__first), distance(__first));
+        return __copy(__first, __last, __result, iterator_category(__first), __difference_type(__first));
     }
 
     template<class _InputIterator, class _OutputIterator, class _T>

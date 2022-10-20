@@ -22,7 +22,7 @@ __STL_BEGIN_NAMESPACE
     }
 
     template<class _T1, class _T2>
-    inline void _Constuct(_T1 *__p, const _T2 &__value) {
+    inline void _Construct(_T1 *__p, const _T2 &__value) {
         new((void *) __p) _T1(__value);
     }
 

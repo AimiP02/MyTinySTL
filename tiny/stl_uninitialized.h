@@ -51,19 +51,17 @@ __STL_BEGIN_NAMESPACE
 
     template<class _InputIterator, class _ForwardIterator>
     inline _ForwardIterator uninitialized_copy(_InputIterator __first, _InputIterator __last, _ForwardIterator __result) {
-        return __uninitialized_copy(__first, __last, __result, value_type(__first));
+        return __uninitialized_copy(__first, __last, __result, value_type(__result));
     }
 
     /* uninitialized_fill: 在 [ __first, __last ) 区间内填充元素值 */
     template<class _ForwardIterator, class _T>
-    inline void __uninitialized_fill_aux(_ForwardIterator __first, _ForwardIterator __last, const _T &__x,
-                                         __true_type) {
+    inline void __uninitialized_fill_aux(_ForwardIterator __first, _ForwardIterator __last, const _T &__x, __true_type) {
         fill(__first, __last, __x);
     }
 
     template<class _ForwardIterator, class _T>
-    inline void __uninitialized_fill_aux(_ForwardIterator __first, _ForwardIterator __last, const _T &__x,
-                                         __false_type) {
+    inline void __uninitialized_fill_aux(_ForwardIterator __first, _ForwardIterator __last, const _T &__x, __false_type) {
         _ForwardIterator __cur = __first;
         try {
             for( ; __cur != __last; ++__cur) {
@@ -76,8 +74,7 @@ __STL_BEGIN_NAMESPACE
     }
 
     template<class _ForwardIterator, class _T1, class _T2>
-    inline void __uninitialized_fill(_ForwardIterator __first, _ForwardIterator __last, const _T1 &__x,
-                                     _T2 *) {
+    inline void __uninitialized_fill(_ForwardIterator __first, _ForwardIterator __last, const _T1 &__x, _T2 *) {
         typedef typename __type_traits<_T2>::is_POD_type _Is_POD;
         __uninitialized_fill_aux(__first, __last, __x, _Is_POD());
     }
@@ -89,14 +86,12 @@ __STL_BEGIN_NAMESPACE
 
     /* uninitialized_fill_n: 从 __first 位置开始，填充n个元素值，返回填充的位置 */
     template<class _ForwardIterator, class _Size, class _T>
-    inline _ForwardIterator __uninitialized_fill_n_aux(_ForwardIterator __first, _Size __n, const _T &__x,
-                                                       __true_type) {
+    inline _ForwardIterator __uninitialized_fill_n_aux(_ForwardIterator __first, _Size __n, const _T &__x, __true_type) {
         return fill_n(__first, __n, __x);
     }
 
     template<class _ForwardIterator, class _Size, class _T>
-    inline _ForwardIterator __uninitialized_fill_n_aux(_ForwardIterator __first, _Size __n, const _T &__x,
-                                                       __false_type) {
+    inline _ForwardIterator __uninitialized_fill_n_aux(_ForwardIterator __first, _Size __n, const _T &__x, __false_type) {
         _ForwardIterator __cur = __first;
         try {
             for( ; __n > 0; --__n, ++__cur) {

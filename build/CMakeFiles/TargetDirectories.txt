@@ -1,0 +1,3 @@
+/home/ubuntu/github_respositories/Bronya_tinySTL/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/github_respositories/Bronya_tinySTL/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/github_respositories/Bronya_tinySTL/build/CMakeFiles/Bronya_tinySTL.dir
